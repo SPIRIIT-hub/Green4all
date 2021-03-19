@@ -17,6 +17,7 @@ struct AssetInfo: Identifiable {
     var outputSize: String  //compact or full
     var timeZone: String //US/Eastern
     //var timeSeries: Array<TimeSeries>
+    var isFavorite: Bool
 }
 
 struct TimeSeries: Identifiable {
@@ -36,5 +37,5 @@ enum TypeTemporalResolution {
 
 let now = Date()
 
-let aapl = AssetInfo(symbol: "AAPL", name: "Apple Inc.", company: "Apple Inc", lastRefreshed: now, intradayInterval: 5, outputSize: "compact", timeZone: "US/Eastern")
+let aapl = AssetInfo(symbol: "AAPL", name: "Apple Inc.", company: "Apple Inc", lastRefreshed: now, intradayInterval: 5, outputSize: "compact", timeZone: "US/Eastern", isFavorite: true)
 let aaplTimeSeriesIntraday = TimeSeries(temporalResolutions: TypeTemporalResolution.intraday(min: 5), lastRefreshedTimeSeries: now, open: 124.05, high: 125.86, low: 122.34, close: 124.76, volume: 111440000)

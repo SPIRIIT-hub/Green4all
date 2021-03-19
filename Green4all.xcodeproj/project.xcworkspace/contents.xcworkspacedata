@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/vincent/Documents/swift_code/Green4all/Green4all/Market/FavoriteButton.swift">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
