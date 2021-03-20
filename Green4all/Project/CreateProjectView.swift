@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-
-let categories = [
-    Cat(img: Category.bioeconomie, name: "Bioéconomie"),
-    Cat(img: Category.risqueclimatique, name: "Risque climatique"),
-    Cat(img: Category.economiebleu, name: "Économie bleu"),
-    Cat(img: Category.financeverte, name: "Finance Verte"),
-    Cat(img: Category.social, name: "Social"),
-    Cat(img: Category.marche, name: "Marchés")
-]
-
 struct CreateProjectView: View {
     
     @Binding var showAddProjectView:Bool
@@ -36,25 +26,42 @@ struct CreateProjectView: View {
         picture: "",
         video: "",
         finished_date: Date(),
-        category: Category.none
+        category: CategoryProject.none
     )
-
-    @State private var selectedcat = Category.none
     
-//    init() {
-//        UITableView.appearance().backgroundColor = .clear
-//    }
+    @State private var selectedCategory = CategoryProject.none
     
     var body: some View {
         
-        NavigationView {
+        // Permet de supprimer la couleur du background par defaut
+        UITableView.appearance().backgroundColor = .clear
+        
+        // Met un background color
+        UINavigationBar.appearance().backgroundColor = UIColor(Color("bgGreen"))
+        
+        // Couleur et fontWeight du titre de la NavBar
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor(Color.white),
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        
+        // Couleur de la navBarItems
+        UINavigationBar.appearance().tintColor = .white
+        
+        // Couleur du background de la navBar
+        UINavigationBar.appearance().barTintColor = UIColor(Color("bgGreen"))
+        
+        // Passer a false si on ne veut que la couleur de la navBar soit translucide
+        //UINavigationBar.appearance().isTranslucent = false
+        
+        return NavigationView {
             ZStack {
                 Color("bgGreen").ignoresSafeArea()
                 
                 Form {
                     TextField("Titre", text: $title)
                     Section {
-                        
                         VStack {
                             HStack {
                                 Text("Catégories")
@@ -62,40 +69,46 @@ struct CreateProjectView: View {
                                     .padding(.leading, -10)
                                 Spacer()
                             }
-                            ScrollView (.horizontal){
+                            ScrollView (.horizontal) {
                                 HStack {
-                                    ForEach (categories) { cat in
+                                    ForEach (CategoryProject.allCases, id: \.self) { categoryProject in
                                         Button(action: {
-                                            if (selectedcat == cat.img){
-                                                selectedcat = Category.none
+                                            if (selectedCategory == categoryProject){
+                                                selectedCategory = CategoryProject.none
                                             }
                                             else{
-                                                selectedcat = cat.img
+                                                selectedCategory = categoryProject
                                             }
                                         }, label: {
-                                            if (selectedcat == cat.img)
-                                            {
-                                                Image("\(cat.img)")
-                                                    .resizable()
-                                                    .frame(width: 125, height: 125)
-                                                    .cornerRadius(7)
-                                                    .border(Color.green, width: 10)
+                                            if categoryProject != CategoryProject.none {
+                                                if (selectedCategory == categoryProject)
+                                                {
+                                                    Image("\(categoryProject.categoryProjectImage)")
+                                                        .resizable()
+                                                        .frame(width: 125, height: 125)
+                                                        .cornerRadius(5)
+                                                        .border(Color.green, width: 5)
+                                                }
+                                                else
+                                                {
+                                                    Image("\(categoryProject.categoryProjectImage)")
+                                                        .resizable()
+                                                        .frame(width: 125, height: 125)
+                                                        .cornerRadius(5)
+                                                        .overlay(
+                                                            VStack {
+                                                                Spacer()
+                                                                Text(categoryProject.categoryProjectTitle)
+                                                                    .fontWeight(.heavy)
+                                                                    .foregroundColor(Color.white)
+                                                                Text("")
+                                                                    .frame(height: 2)
+                                                                
+                                                            }
+                                                        )
+                                                }
                                             }
-                                            else
-                                            {
-                                                Image("\(cat.img)")
-                                                    .resizable()
-                                                    .frame(width: 125, height: 125)
-                                                    .cornerRadius(7)
-                                                    .overlay(
-                                                        VStack {
-                                                            Spacer()
-                                                            Text(cat.name)
-                                                            Text("")
-                                                                .frame(height: 2)
-                                                        }
-                                                    )
-                                            }
+                                            
                                         })
                                         
                                     }
@@ -103,9 +116,10 @@ struct CreateProjectView: View {
                             }.padding(.horizontal, -10)
                         }
                     }
+                    
                     Section {
                         TextEditor(text: $desc)
-                            .frame(height: 100)
+                            .frame(height: 110.0)
                             .lineLimit(10)
                             .overlay(
                                 HStack {
@@ -128,16 +142,24 @@ struct CreateProjectView: View {
                     }
                     
                     Section {
-                        TextField("URL Image", text: $urlvideo)
+                        TextField("URL Image", text: $urlimg)
                     }
                     
                     Section {
-                        TextField("URL Vidéo (optionnel)", text: $urlimg)
+                        TextField("URL Vidéo (optionnel)", text: $urlvideo)
                     }
-                }
-            }
+                    
+                }// :Form
+                .disableAutocorrection(true)
+                
+            }//:ZStack
+            
             .navigationBarTitle("Nouveau projet", displayMode: .inline)
-            .navigationBarItems(leading: cancelButton, trailing: addButton)
+            
+            .navigationBarItems(
+                leading: cancelButton.font(/*@START_MENU_TOKEN@*/.callout/*@END_MENU_TOKEN@*/),
+                trailing: addButton.font(/*@START_MENU_TOKEN@*/.callout/*@END_MENU_TOKEN@*/)
+            )
         }
     }
 }
@@ -155,7 +177,6 @@ extension CreateProjectView {
             
             if title == "" || desc == "" || Int(budget) ?? 0 == 0 || urlimg == "" || Int(duree) ?? 0 == 0 {
                 showingAlert = true
-                
             }
             else {
                 self.projet.title = title
@@ -164,14 +185,14 @@ extension CreateProjectView {
                 self.projet.picture = urlimg
                 self.projet.video = urlvideo
                 self.projet.finished_date = Date().addingTimeInterval(TimeInterval(86400 * (Int(duree) ?? 0)))
-                self.projet.category = selectedcat
+                self.projet.category = selectedCategory
                 
                 self.showingAlert = false
                 self.showAddProjectView = false
             }
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+            Alert(title: Text("Attention"), message: Text("Vous devez remplir tous les champs"), dismissButton: .default(Text("OK")))
         }
     }
 }

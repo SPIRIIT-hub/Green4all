@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // La structure projet
 struct Project :Identifiable {
     
@@ -19,7 +18,7 @@ struct Project :Identifiable {
     var video:String?
     var created_date = Date()
     var finished_date: Date
-    var category: Category
+    var category: CategoryProject
 }
 
 // EXTENSIONS
@@ -29,7 +28,7 @@ extension Project {
         picture: "icon_project1",
         video: "video_project1",
         finished_date: Date(),
-        category: Category.bioeconomie
+        category: CategoryProject.energie
     )
 
     static var project2:Project = Project(title: "Projet 2", description_project: "Description 2",
@@ -37,7 +36,7 @@ extension Project {
         picture: "icon_project2",
         video: "video_project2",
         finished_date: Date(),
-        category: Category.economiebleu
+        category: CategoryProject.batiment
     )
 
     static var project3:Project = Project(title: "Projet 3", description_project: "Description 3",
@@ -45,7 +44,7 @@ extension Project {
         picture: "icon_project3",
         video: "video_project3",
         finished_date: Date(),
-        category: Category.financeverte
+        category: CategoryProject.energie
     )
 
     static var project4:Project = Project(title: "Projet 4", description_project: "Description 4",
@@ -53,7 +52,7 @@ extension Project {
         picture: "icon_project4",
         video: "video_project4",
         finished_date: Date(),
-        category: Category.risqueclimatique
+        category: CategoryProject.transport
     )
 
     static var listProjects: [Project] = [project1, project2, project3, project4]

@@ -16,6 +16,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             TextField("Rechercher ...", text: $searchText)
+                .disableAutocorrection(true)
                 .padding(8)
                 .padding(.horizontal, 25)
                 .foregroundColor(Color("greenSearchBar"))

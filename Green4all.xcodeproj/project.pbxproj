@@ -15,11 +15,10 @@
 		7D3ABB1726034D49007C1A7D /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3ABB1626034D49007C1A7D /* ProjectDetailView.swift */; };
 		7D7CD1F72604DCD100475208 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7CD1F62604DCD100475208 /* ProgressBar.swift */; };
 		7D847C19260499CE009C82E7 /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D847C18260499CE009C82E7 /* CreateProjectView.swift */; };
-		7DA6A8C42603EB0F00F11A4A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6A8C32603EB0F00F11A4A /* NewProjectView.swift */; };
 		7DA6A8C72603FABC00F11A4A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6A8C62603FABC00F11A4A /* SearchBar.swift */; };
 		7DA75BCB26035380002302A6 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75BCA26035380002302A6 /* Project.swift */; };
 		7DA75BCE26035919002302A6 /* ProjectRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75BCD26035919002302A6 /* ProjectRowView.swift */; };
-		7DA75BD126035F56002302A6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75BD026035F56002302A6 /* Category.swift */; };
+		7DA75BD126035F56002302A6 /* CategoryProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75BD026035F56002302A6 /* CategoryProject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +32,10 @@
 		7D3ABB1626034D49007C1A7D /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 		7D7CD1F62604DCD100475208 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		7D847C18260499CE009C82E7 /* CreateProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
-		7DA6A8C32603EB0F00F11A4A /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
 		7DA6A8C62603FABC00F11A4A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		7DA75BCA26035380002302A6 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		7DA75BCD26035919002302A6 /* ProjectRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRowView.swift; sourceTree = "<group>"; };
-		7DA75BD026035F56002302A6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7DA75BD026035F56002302A6 /* CategoryProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +92,9 @@
 			children = (
 				7D847C18260499CE009C82E7 /* CreateProjectView.swift */,
 				7D3ABB1326034D34007C1A7D /* ProjectListView.swift */,
-				7DA6A8C32603EB0F00F11A4A /* NewProjectView.swift */,
 				7DA75BCD26035919002302A6 /* ProjectRowView.swift */,
 				7DA75BCA26035380002302A6 /* Project.swift */,
-				7DA75BD026035F56002302A6 /* Category.swift */,
+				7DA75BD026035F56002302A6 /* CategoryProject.swift */,
 				7D3ABB1626034D49007C1A7D /* ProjectDetailView.swift */,
 				7D7CD1F62604DCD100475208 /* ProgressBar.swift */,
 			);
@@ -178,12 +175,11 @@
 				7DA75BCE26035919002302A6 /* ProjectRowView.swift in Sources */,
 				7D847C19260499CE009C82E7 /* CreateProjectView.swift in Sources */,
 				7D3ABB1426034D34007C1A7D /* ProjectListView.swift in Sources */,
-				7DA6A8C42603EB0F00F11A4A /* NewProjectView.swift in Sources */,
 				768357C5260348640032FE3A /* Green4allApp.swift in Sources */,
 				7DA6A8C72603FABC00F11A4A /* SearchBar.swift in Sources */,
 				7DA75BCB26035380002302A6 /* Project.swift in Sources */,
 				7D3ABB1726034D49007C1A7D /* ProjectDetailView.swift in Sources */,
-				7DA75BD126035F56002302A6 /* Category.swift in Sources */,
+				7DA75BD126035F56002302A6 /* CategoryProject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
