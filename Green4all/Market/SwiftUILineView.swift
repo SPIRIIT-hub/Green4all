@@ -43,17 +43,25 @@ struct LineView: View {
                 VStack {
                     GeometryReader{ reader in
                         Line(data: self.data,
-                             frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width , height: reader.frame(in: .local).height))//,
+                             frame: .constant(CGRect(x: 0, y: 0,
+                                    width: reader.frame(in: .local).width ,
+                                    height: reader.frame(in: .local).height))//,
                              //minDataValue: .constant(nil),
                              //maxDataValue: .constant(nil)
                         )
                         //.offset(x: 0, y: 0)
                     }
-                    .frame(width: geometry.frame(in: .local).size.width, height: geometry.frame(in: .local).size.height)//, height: 200)
+                    .frame(
+                        width: geometry.frame(in: .local).size.width ,
+                        height: geometry.frame(in: .local).size.height * 1.0)
+                        //height: 200)
                         //.offset(x: 0, y: -100)
 
                 }
-                .frame(width: geometry.frame(in: .local).size.width)//, height: 200)
+                .frame(
+                    width: geometry.frame(in: .local).size.width ,
+                    height: geometry.frame(in: .local).size.height * 1.0)
+                    //height: 200)
         
             //}
         }

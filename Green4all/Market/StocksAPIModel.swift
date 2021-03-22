@@ -12,6 +12,7 @@ struct StockPrice : Codable{
     let close: String
     let high: String
     let low: String
+    let volume: String
     
     private enum CodingKeys: String, CodingKey {
         
@@ -19,6 +20,7 @@ struct StockPrice : Codable{
         case high = "2. high"
         case low = "3. low"
         case close = "4. close"
+        case volume = "5. volume"
     }
 }
 

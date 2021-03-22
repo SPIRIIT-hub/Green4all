@@ -15,7 +15,7 @@ struct FavoriteButton: View {
             isSet.toggle()
         }) {
             Image(systemName: isSet ? "star.fill": "star")
-                .foregroundColor(isSet ? Color.yellow : Color.gray)
+                .foregroundColor(isSet ? Color.yellow : Color.white)
         }
     }
 }

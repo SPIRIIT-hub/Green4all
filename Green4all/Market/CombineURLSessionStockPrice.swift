@@ -8,19 +8,39 @@
 import Foundation
 import Combine
 
-class Stocks : ObservableObject{
+class Stocks : ObservableObject {  
     
     @Published var prices = [Double]()
     @Published var currentPrice = "...."
+    @Published var open = ""
+    @Published var close = ""
+    @Published var high = ""
+    @Published var low = ""
+    @Published var volume = ""
+
+    //var stockSymbol: String = ""
+    
+    private var stockFunction = "TIME_SERIES_DAILY"
+    var stockSymbol = ""
+    private var apiKey = "2OZPW2NW0AT07VNL"
+    /*
     var urlBase = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=2OZPW2NW0AT07VNL&datatype=json"
+    */
     
     var cancellable : Set<AnyCancellable> = Set()
     
-    init() {
+    init(stockSymbol: String) {
+        self.stockSymbol = stockSymbol
         fetchStockPrice()
     }
     
     func fetchStockPrice(){
+        
+        let urlBase = "https://www.alphavantage.co/query?function=\(stockFunction)&symbol=\(stockSymbol)&apikey=\(apiKey)&datatype=json" //"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=2OZPW2NW0AT07VNL&datatype=json" 
+        
+        //print(urlBase)
+        
+
         
         URLSession.shared.dataTaskPublisher(for: URL(string: "\(urlBase)")!)
             .map{output in
@@ -52,6 +72,11 @@ class Stocks : ObservableObject{
             DispatchQueue.main.async{
                 self.prices = stockPrices
                 self.currentPrice = stockData.last?.value.close ?? "..."
+                self.open = stockData.last?.value.open ?? "..."
+                self.close = stockData.last?.value.close ?? "..."
+                self.high = stockData.last?.value.high ?? "..."
+                self.low = stockData.last?.value.low ?? "..."
+                self.volume = stockData.last?.value.volume ?? "..."
             }
         })
             .store(in: &cancellable)
@@ -69,3 +94,4 @@ extension String {
         return String.shortDate.date(from: self)
     }
 }
+

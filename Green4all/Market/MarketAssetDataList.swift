@@ -1,23 +1,21 @@
 //
-//  Market.swift
+//  MarketAssetDataList.swift
 //  Green4all
 //
-//  Created by vincent schmitt on 18/03/2021.
+//  Created by vincent schmitt on 21/03/2021.
 //
 
 import SwiftUI
 
-struct Market: View {
-    @ObservedObject var stocks = Stocks(stockSymbol: "") //stockMicrosoft //Stocks()
-    //@State var item = aapl
-    //@EnvironmentObject var items: ModelData
+struct MarketAssetDataList: View {
+
+    // ** to save API request
+    @ObservedObject var stocks = Stocks(stockSymbol: "")
     @EnvironmentObject var modelData : ModelData
     
     init() {
             UITableView.appearance().backgroundColor = .yellow // Uses UIColor
         }
-    
-    //var itemData = aaplTimeSeriesIntraday
     
     @State private var showFavoritesOnly = false
     
@@ -32,7 +30,7 @@ struct Market: View {
             searchText.isEmpty || $0.symbol.localizedStandardContains(searchText) || $0.company.localizedStandardContains(searchText)
         }
     }
-    
+
     @State var searchText: String = ""
     
     var body: some View {
@@ -66,20 +64,19 @@ struct Market: View {
         }
         .navigationTitle("Marché vert")
         }
-        
     }
 }
 
-struct Market_Previews: PreviewProvider {
+struct MarketAssetDataList_Previews: PreviewProvider {
+    static let modelData = ModelData()
     static var previews: some View {
-        Market().environmentObject(ModelData())
-        //Market()
+        MarketAssetDataList().environmentObject(ModelData())
     }
 }
 
-extension Market {
+extension MarketAssetDataList {
     private var AssetDataRow: some View {
-        let item: AssetInfo = aaplInfo
+        let item = aaplInfo
         //let item = stocks
         
         return
@@ -113,7 +110,7 @@ extension Market {
     }
 }
 
-extension Market {
+extension MarketAssetDataList {
     private var change : some View {
         
         let open = Double(stocks.open)

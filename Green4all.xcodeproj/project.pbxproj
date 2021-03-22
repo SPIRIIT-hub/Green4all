@@ -12,6 +12,14 @@
 		768357C9260348650032FE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768357C8260348650032FE3A /* Assets.xcassets */; };
 		768357CC260348650032FE3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768357CB260348650032FE3A /* Preview Assets.xcassets */; };
 		BF748EA626049A5400AAEDDF /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF748EA526049A5400AAEDDF /* FavoriteButton.swift */; };
+		BF748EAA2604AF5F00AAEDDF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF748EA92604AF5F00AAEDDF /* TestView.swift */; };
+		BF95130826079A46001D9BA7 /* MarketAssetDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95130726079A46001D9BA7 /* MarketAssetDataList.swift */; };
+		BF9513102607F5BC001D9BA7 /* MarketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95130F2607F5BC001D9BA7 /* MarketList.swift */; };
+		BF95132B2608B3CE001D9BA7 /* MarketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95132A2608B3CD001D9BA7 /* MarketDetail.swift */; };
+		BF95133E26093001001D9BA7 /* LoadDataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95133D26092FFD001D9BA7 /* LoadDataFile.swift */; };
+		BF951341260935F0001D9BA7 /* IBMStockData.json in Resources */ = {isa = PBXBuildFile; fileRef = BF951340260935F0001D9BA7 /* IBMStockData.json */; };
+		BF95134426093792001D9BA7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95134326093792001D9BA7 /* Color.swift */; };
+		BF9A7E332604B9F900D45D65 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7E322604B9F800D45D65 /* SearchBar.swift */; };
 		BFB99E6126034D6B005C1970 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB99E6026034D6B005C1970 /* Market.swift */; };
 		BFB99E66260355E7005C1970 /* MarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB99E65260355E7005C1970 /* MarketModel.swift */; };
 		BFBF8A5926039571008A7E2E /* MarketAssetDataDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF8A5826039571008A7E2E /* MarketAssetDataDetailView.swift */; };
@@ -30,6 +38,14 @@
 		768357CB260348650032FE3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		768357CD260348650032FE3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF748EA526049A5400AAEDDF /* FavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		BF748EA92604AF5F00AAEDDF /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		BF95130726079A46001D9BA7 /* MarketAssetDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAssetDataList.swift; sourceTree = "<group>"; };
+		BF95130F2607F5BC001D9BA7 /* MarketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketList.swift; sourceTree = "<group>"; };
+		BF95132A2608B3CD001D9BA7 /* MarketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDetail.swift; sourceTree = "<group>"; };
+		BF95133D26092FFD001D9BA7 /* LoadDataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDataFile.swift; sourceTree = "<group>"; };
+		BF951340260935F0001D9BA7 /* IBMStockData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IBMStockData.json; sourceTree = "<group>"; };
+		BF95134326093792001D9BA7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BF9A7E322604B9F800D45D65 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BFB99E6026034D6B005C1970 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		BFB99E65260355E7005C1970 /* MarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketModel.swift; sourceTree = "<group>"; };
 		BFBF8A5826039571008A7E2E /* MarketAssetDataDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAssetDataDetailView.swift; sourceTree = "<group>"; };
@@ -91,8 +107,15 @@
 		BFB99E6326034E51005C1970 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				BF951340260935F0001D9BA7 /* IBMStockData.json */,
+				BF748EA92604AF5F00AAEDDF /* TestView.swift */,
 				BFB99E6026034D6B005C1970 /* Market.swift */,
+				BF95130726079A46001D9BA7 /* MarketAssetDataList.swift */,
+				BF9A7E322604B9F800D45D65 /* SearchBar.swift */,
 				BFBF8A5826039571008A7E2E /* MarketAssetDataDetailView.swift */,
+				BF95130F2607F5BC001D9BA7 /* MarketList.swift */,
+				BF95134326093792001D9BA7 /* Color.swift */,
+				BF95132A2608B3CD001D9BA7 /* MarketDetail.swift */,
 				BF748EA526049A5400AAEDDF /* FavoriteButton.swift */,
 				BFBF8A602603B5CE008A7E2E /* CombineURLSessionStockPrice.swift */,
 				BFBF8A612603B5CE008A7E2E /* StocksAPIModel.swift */,
@@ -100,6 +123,7 @@
 				BFBF8A632603B5CF008A7E2E /* SwiftUILineView.swift */,
 				BFBF8A5E2603B5CD008A7E2E /* SwiftUIPathLinechart.swift */,
 				BFB99E65260355E7005C1970 /* MarketModel.swift */,
+				BF95133D26092FFD001D9BA7 /* LoadDataFile.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -162,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				768357CC260348650032FE3A /* Preview Assets.xcassets in Resources */,
+				BF951341260935F0001D9BA7 /* IBMStockData.json in Resources */,
 				768357C9260348650032FE3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,17 +198,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF95130826079A46001D9BA7 /* MarketAssetDataList.swift in Sources */,
+				BF748EAA2604AF5F00AAEDDF /* TestView.swift in Sources */,
+				BF9A7E332604B9F900D45D65 /* SearchBar.swift in Sources */,
 				768357C7260348640032FE3A /* ContentView.swift in Sources */,
+				BF95132B2608B3CE001D9BA7 /* MarketDetail.swift in Sources */,
 				BFBF8A692603B5D0008A7E2E /* SwiftUILineView.swift in Sources */,
 				BFBF8A5926039571008A7E2E /* MarketAssetDataDetailView.swift in Sources */,
 				BFB99E66260355E7005C1970 /* MarketModel.swift in Sources */,
 				BFBF8A672603B5D0008A7E2E /* StocksAPIModel.swift in Sources */,
 				BFBF8A652603B5D0008A7E2E /* SwiftUILine.swift in Sources */,
+				BF9513102607F5BC001D9BA7 /* MarketList.swift in Sources */,
 				768357C5260348640032FE3A /* Green4allApp.swift in Sources */,
 				BFBF8A662603B5D0008A7E2E /* CombineURLSessionStockPrice.swift in Sources */,
+				BF95133E26093001001D9BA7 /* LoadDataFile.swift in Sources */,
 				BFB99E6126034D6B005C1970 /* Market.swift in Sources */,
 				BF748EA626049A5400AAEDDF /* FavoriteButton.swift in Sources */,
 				BFBF8A642603B5D0008A7E2E /* SwiftUIPathLinechart.swift in Sources */,
+				BF95134426093792001D9BA7 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
