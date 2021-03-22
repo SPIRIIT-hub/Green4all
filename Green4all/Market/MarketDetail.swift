@@ -56,7 +56,7 @@ struct MarketDetail: View {
                     .frame(minWidth: 300, idealWidth: 400, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 100, idealHeight: 260, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)  //(width: 300, height: 250,  alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     //(width: geom.frame(in: .local).width , height: 250)
                     .padding()
-                    .background(colorTranparent)
+                    .background(colorTransparentClear)
             //}
             //datas
                 /*
@@ -140,10 +140,12 @@ extension MarketDetail {
     //private func dataListView(title: String, data: Double) -> some View {
     private func dataListView(title: String, data: String) -> some View {
         HStack {
-                Text(title)
+            Text(title)
+                .fontWeight(.bold)
             Spacer()
                 //Text("\(data, specifier: "%.2f")")
             Text("\(Double(data) ?? 0, specifier: "%.2f")")
+                .fontWeight(.bold)
         }
     }
 }
