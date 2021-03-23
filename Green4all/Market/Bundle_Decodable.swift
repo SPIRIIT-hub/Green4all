@@ -1,12 +1,12 @@
 //
-//  StocksAPIModel.swift
-//  ProtocolAFPEexample
+//  Bundle_Decodable.swift
+//  Green4all
 //
-//  Created by yoko on 11/03/2021.
+//  Created by vincent schmitt on 23/03/2021.
 //
 
 import Foundation
-
+/*
 struct StockPrice : Codable{
     let open: String
     let close: String
@@ -31,17 +31,31 @@ struct StocksDaily : Codable {
         case timeSeriesDaily = "Time Series (Daily)"
     }
     
-    /*
-    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         timeSeriesDaily = try (values.decodeIfPresent([String : StockPrice].self, forKey: .timeSeriesDaily))
     }
- */
+ 
 }
-/*
-let aaa = StockPrice(open: "1", close: "2", high: "3", low: "4", volume: "5")
-let bbb = StockPrice(open: "11", close: "22", high: "33", low: "44", volume: "55")
-let cc = StocksDaily(timeSeriesDaily: ["2021-03-23": aaa, "2021-3-22": bbb])
 */
+
+extension Bundle {
+    func decode(_ file: String) -> StocksDaily {
+        guard let url = self.url(forResource: file, withExtension: nil) else {
+            fatalError("Failed to locate \(file) in bundle.")
+        }
+
+        guard let data = try? Data(contentsOf: url) else {
+            fatalError("Failed to load \(file) from bundle.")
+        }
+
+        let decoder = JSONDecoder()
+
+        guard let loaded = try? decoder.decode(StocksDaily.self, from: data) else {
+            fatalError("Failed to decode \(file) from bundle.")
+        }
+
+        return loaded
+    }
+}

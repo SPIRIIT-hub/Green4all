@@ -18,19 +18,20 @@ struct MyStock: Hashable, Codable, Identifiable {
     var isFavorite: Bool
 */
 
+/*
 struct AssetData: Hashable, Codable, Identifiable {
-    var id = UUID()
-    var open: String
-    var high: String
-    var low: String
-    var close: String
-    var volume: String
+    let id = UUID()
+    let open: String
+    let high: String
+    let low: String
+    let close: String
+    let volume: String
 }
 
 final class StockData: ObservableObject {
     @Published var ibmStockData: [AssetData] = load("IBMStockData.json")
 }
-
+*/
 
 
 func load<T: Decodable>(_ filename: String) -> T {

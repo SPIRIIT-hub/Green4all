@@ -10,6 +10,12 @@ import SwiftUI
 struct TestView: View {
     @State private var showSheet = false
     //@EnvironmentObject var stockData : StockData
+    //@EnvironmentObject var stockData: StockData
+    /*
+    let IBMstockData = Bundle.main.decode("IBM2021-03-22.json")
+    let lastRefreshed = "2021-03-22"
+    */
+    @ObservedObject var stockAAPL = StockData(stockSymbol: "AAPL")
     
     init() {
             UITableView.appearance().backgroundColor = .yellow // Uses UIColor
@@ -18,12 +24,17 @@ struct TestView: View {
     var body: some View {
         NavigationView {
             VStack {
-            NavigationLink(
-                destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/){
-                    /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
-                        //.renderingMode(.original)
-                }
-                //Text("\(stockData.ibmStockData[0].open)")
+                Text("Hello")
+                //Text(lastRefreshed)
+                Text(stockAAPL.currentPrice)
+                Text(stockAAPL.open)
+                Text(stockAAPL.close)
+                    
+                //IBMstockData.timeSeriesDaily?[lastRefreshed]?.open ?? "none")
+                //Text(IBMstockData.timeSeriesDaily?[lastRefreshed]?.close ?? "none")
+                Text(now, style: .date)
+                                
+                //Text(String.shortDate.date(from: now))
                 /*
                 GeometryReader { geo in
                     Image(uiImage: textToImage(drawText: "Test", inImage: UIImage(named: "Image")!, atPoint: CGPoint(x: geo.size.width, y: geo.size.height)))
@@ -50,14 +61,7 @@ struct TestView: View {
                         //    .resizable()
                         //    .aspectRatio(contentMode: .fit)
                         //    .frame(width: geo.size.width, height: 300)
-                    
-                
-                
-                
-                
-            }.buttonStyle(PlainButtonStyle())
-            
-            
+            /*
             .navigationBarItems(trailing: Button(action: {
                     //print("Open profile sheet")
                 self.showSheet.toggle()
@@ -65,18 +69,20 @@ struct TestView: View {
                     Image(systemName: "plus.circle")
                         .imageScale(.large)
                 }))
+                 */
+            /*
             .sheet(isPresented: $showSheet, content: {
             Text("modal sheet").background(Color.green)
             })
-              
-            
+            */
+            }
         }
     }
 }
 
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-        TestView().environmentObject(StockData())
+        TestView()//.environmentObject(StockData())
     }
 }
 

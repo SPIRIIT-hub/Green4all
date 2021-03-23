@@ -61,7 +61,7 @@ let assetData1 = AssetData(open: 124.05, high: 125.86, low: 122.34, close: 124.7
 */
 
 final class ModelData: ObservableObject {
-    @Published var assetInfos: [AssetInfo] = [aaplInfo, ibmInfo] //= load("landmarkData.json")
+    @Published var assetInfos: [AssetInfo] = [aaplInfo, ibmInfo, msftInfo] //= load("landmarkData.json")
     
     /*
     var categories: [String: [AssetInfo]] {       // create list by categories

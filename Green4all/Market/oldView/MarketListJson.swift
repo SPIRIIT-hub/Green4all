@@ -1,21 +1,24 @@
 //
-//  MarketList.swift
+//  MarketListJson.swift
 //  Green4all
 //
-//  Created by yoko on 21/03/2021.
+//  Created by vincent schmitt on 23/03/2021.
 //
 
 import SwiftUI
 
-struct MarketList: View {
+struct MarketListJson: View {
     
-    @State private var showFavoritesOnly = false
+    /* to load .json file
+    let IBMstockData = Bundle.main.decode("IBM2021-03-22.json")
+    let lastRefreshed = "2021-03-22"
+    */
     
-    //@ObservedObject var stocks: Stocks
-    @ObservedObject var stockAAPL = Stocks(stockSymbol: "AAPL")
-    @ObservedObject var stockIBM = Stocks(stockSymbol: "IBM")
-    @ObservedObject var stockMSFT = Stocks(stockSymbol: "MSFT")
+    @ObservedObject var stockAAPL = StockData(stockSymbol: "AAPL")
+    @ObservedObject var stockIBM = StockData(stockSymbol: "IBM")
+    @ObservedObject var stockMSFT = StockData(stockSymbol: "MSFT")
     @EnvironmentObject var modelData: ModelData
+    @State private var showFavoritesOnly = false
     
     init() {
         UITableView.appearance().backgroundColor = uicolorBackground
@@ -25,13 +28,13 @@ struct MarketList: View {
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         }
     
-    private func assign(item: String) -> Stocks {
+    private func assign(item: String) -> StockData {
         switch(item) {
         case "AAPL": return stockAAPL
         case "IBM": return stockIBM
         //case "MSFT": return stockMSFT
         default:
-            return Stocks(stockSymbol: "")
+            return StockData(stockSymbol: "")
         }
     }
     
@@ -48,11 +51,9 @@ struct MarketList: View {
     }
     
     @State var searchText: String = ""
-    
+
     
     var body: some View {
-        //let assign = ["AAPL": stockAAPL, "IBM": stockIBM, "MSFT": stockMSFT]
-    
         NavigationView {
         ZStack {
             colorBackground
@@ -69,8 +70,6 @@ struct MarketList: View {
                 }
                 .padding(.horizontal)
                 
-                //Text(modelData.assetInfos[0].symbol)
-                //Text(modelData.assetInfos[1].symbol)
                 
                 ScrollView {
                     //ForEach(searchedItem.indices) {index in
@@ -100,16 +99,13 @@ struct MarketList: View {
     }
 }
 
-struct MarketList_Previews: PreviewProvider {
-
+struct MarketListJson_Previews: PreviewProvider {
     static var previews: some View {
-        MarketList().environmentObject(ModelData())
-
-        //MarketList(stocks: Stocks).environmentObject(ModelData())
+        MarketListJson().environmentObject(ModelData())
     }
 }
 
-extension MarketList {
+extension MarketListJson {
     private func AssetDataRow(element: AssetInfo) -> some View {
         //@EnvironmentObject let item: AssetInfo
         
@@ -155,7 +151,7 @@ extension MarketList {
     }
 }
 
-extension MarketList {
+extension MarketListJson {
     private func change(element: AssetInfo) -> some View {
         
         let open = Double(assign(item: element.symbol).open) ?? 0.0 //Double(stockAAPL.open) ?? 0
