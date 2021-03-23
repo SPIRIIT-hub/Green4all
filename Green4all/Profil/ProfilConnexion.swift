@@ -17,8 +17,6 @@ struct ProfilConnexion: View {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().barTintColor = .clear
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().titleTextAttributes =
-            [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes =
             [.foregroundColor: UIColor.white]
     }
@@ -47,7 +45,7 @@ struct ProfilConnexion: View {
                     .onAppear{
                         UITableView.appearance().backgroundColor = .clear
                     }
-                    
+                     
                     VStack( spacing: 100){
                         
                         Button(action: {}, label: {
