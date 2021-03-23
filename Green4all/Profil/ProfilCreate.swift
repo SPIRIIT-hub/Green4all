@@ -46,14 +46,18 @@ struct ProfilCreate: View {
                     }
                 }.onAppear{
                     UITableView.appearance().backgroundColor = .clear
+                        
                 }
-            }
-            .navigationBarTitle("Créer un compte" , displayMode: .inline)        }
-    }
-}
+                .navigationBarTitle("Créer un compte" , displayMode: .inline)
 
-struct ProfilCreate_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilCreate()
+                .navigationBarItems(leading: Button("Cancel"){}, trailing:  Button("Créer"){})
+            }
+        }
+    }
+    
+    struct ProfilCreate_Previews: PreviewProvider {
+        static var previews: some View {
+            ProfilCreate()
+        }
     }
 }
