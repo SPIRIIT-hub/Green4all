@@ -10,6 +10,7 @@
 		560AF61626039E5500E5D6D7 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AF61526039E5500E5D6D7 /* ProfilView.swift */; };
 		560AF61A26039EA600E5D6D7 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AF61926039EA600E5D6D7 /* Profil.swift */; };
 		560AF61E26039ECF00E5D6D7 /* ProfilPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AF61D26039ECF00E5D6D7 /* ProfilPresentation.swift */; };
+		56157915260B380300D6A662 /* ContributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56157914260B380300D6A662 /* ContributionView.swift */; };
 		56A2BADD2603A4EA00BD7535 /* ProfilConnexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2BADC2603A4EA00BD7535 /* ProfilConnexion.swift */; };
 		56A2BAE32609DAFE00BD7535 /* ProfilCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2BAE22609DAFE00BD7535 /* ProfilCreate.swift */; };
 		768357C5260348640032FE3A /* Green4allApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768357C4260348640032FE3A /* Green4allApp.swift */; };
@@ -22,6 +23,7 @@
 		560AF61526039E5500E5D6D7 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		560AF61926039EA600E5D6D7 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		560AF61D26039ECF00E5D6D7 /* ProfilPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilPresentation.swift; sourceTree = "<group>"; };
+		56157914260B380300D6A662 /* ContributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionView.swift; sourceTree = "<group>"; };
 		56A2BADC2603A4EA00BD7535 /* ProfilConnexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilConnexion.swift; sourceTree = "<group>"; };
 		56A2BAE22609DAFE00BD7535 /* ProfilCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilCreate.swift; sourceTree = "<group>"; };
 		768357C1260348640032FE3A /* Green4all.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Green4all.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,7 @@
 				560AF61D26039ECF00E5D6D7 /* ProfilPresentation.swift */,
 				56A2BADC2603A4EA00BD7535 /* ProfilConnexion.swift */,
 				56A2BAE22609DAFE00BD7535 /* ProfilCreate.swift */,
+				56157914260B380300D6A662 /* ContributionView.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				56A2BADD2603A4EA00BD7535 /* ProfilConnexion.swift in Sources */,
 				560AF61626039E5500E5D6D7 /* ProfilView.swift in Sources */,
 				768357C5260348640032FE3A /* Green4allApp.swift in Sources */,
+				56157915260B380300D6A662 /* ContributionView.swift in Sources */,
 				56A2BAE32609DAFE00BD7535 /* ProfilCreate.swift in Sources */,
 				560AF61E26039ECF00E5D6D7 /* ProfilPresentation.swift in Sources */,
 				560AF61A26039EA600E5D6D7 /* Profil.swift in Sources */,

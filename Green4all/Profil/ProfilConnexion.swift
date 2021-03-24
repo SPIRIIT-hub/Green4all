@@ -11,6 +11,7 @@ struct ProfilConnexion: View {
     
     @State var mail: String = ""
     @State var password: String = ""
+    @State var amount:Int64 = 0
     
     
     init(){
@@ -38,6 +39,7 @@ struct ProfilConnexion: View {
                             SecureField("Mot de Passe", text: $password)
                             
                         }
+                        
                         
                     }
                     .foregroundColor(Color("bgDarkGreen"))
