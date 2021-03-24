@@ -31,7 +31,7 @@ struct TabBar: View {
         VStack(spacing: 0) {
             TabView(selection: $selected) {
                 
-                Text("inserer Projets ici")
+                Text("inserer Market ici")
                     .tag(tabItems[0])
                 
                 Grid()

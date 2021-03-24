@@ -43,14 +43,18 @@ struct GuideDetail1: View {
                 VStack {
                     HStack(spacing: 15){
                         Image(systemName: "magnifyingglass")
-                            .font(.system(size: 23, weight: .bold))
-                            .foregroundColor(.white).opacity(0.4)
-                        TextField("Recherche", text: $searchQuery).foregroundColor(.white)
+                            .font(.system(size: 23, weight: .medium))
+                            .foregroundColor(Color("bgGreen"))
+                        
+                    
+                        TextField("Recherche", text: $searchQuery)
+                            .accentColor(Color("bgGreen"))
+                           
                     }
                     .padding(.vertical, 10)
                     .padding(.horizontal)
-                    .background(Color.primary.opacity(0.05))
-                    .cornerRadius(8)
+                    .background(Color.white).opacity(0.7)
+                    .cornerRadius(12)
                     .padding(.horizontal)
                     
                 }
